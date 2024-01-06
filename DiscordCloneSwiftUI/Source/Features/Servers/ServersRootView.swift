@@ -13,6 +13,7 @@ struct Server: Identifiable, Equatable {
 }
 
 struct ServersRootView: View {
+    @State var isVisibleChatView: Bool = false
     
     var servers: [Server] = [
         Server(id: 0, name: "Bibi"),
@@ -30,12 +31,27 @@ struct ServersRootView: View {
                 // 2nd column - Channels
                 ServerChannelView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                    .background {
-                        Color.discordBackground
-                    }
+                    .background(Color.init(uiColor: .systemGray4))
                     .padding(.trailing, 80)
-                
             }
+            
+            //3rd column - Chat view
+            ChatView(isVisibleView: $isVisibleChatView)
+                .background(Color.discordBackground)
+                .offset(x: isVisibleChatView ? 0 : UIScreen.main.bounds.width - 80)
+                .overlay {
+                    Color.black
+                        .opacity(isVisibleChatView ? 0 : 0.4)
+                        .offset(x: isVisibleChatView ? 0 : UIScreen.main.bounds.width - 80)
+                        .onTapGesture {
+                            withAnimation {
+                                isVisibleChatView = true
+                            }
+                            
+                        }
+                }
+            
+            
         }
         
     }

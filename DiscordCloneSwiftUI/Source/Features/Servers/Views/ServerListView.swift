@@ -32,7 +32,7 @@ struct ServerListView: View {
                                     .fill(Color.discordBlue)
                             }
                     }
-                    .frame(width: 85, height: .infinity, alignment: .trailing)
+                    .frame(width: 85, alignment: .trailing)
                     .padding(.trailing, 18)
                 })
             }

@@ -11,8 +11,24 @@ struct HomeRootView: View {
     var body: some View {
         TabView {
             //setup tabbar
-            ServersRootView()
+            Group {
+                ServersRootView()
+                    .tag(0)
+                    .tabItem {
+                        Label("Servers", systemImage: "house.fill")
+                    }
+                
+                ProfileRootView()
+                    .tag(1)
+                    .tabItem {
+                        Label("Profile", systemImage: "person.fill")
+                    }
+            }
+            
+            .toolbarBackground(.visible, for: .tabBar)
+            
         }
+        
     }
 }
 
