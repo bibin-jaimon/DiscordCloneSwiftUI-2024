@@ -12,7 +12,7 @@ struct Server: Identifiable, Equatable {
     let name: String
 }
 
-struct ContentView: View {
+struct ServersRootView: View {
     
     var servers: [Server] = [
         Server(id: 0, name: "Bibi"),
@@ -24,7 +24,6 @@ struct ContentView: View {
             HStack(spacing: 0) {
                 //1st column -  Servers
                 ServerListView(servers: servers)
-                
                     .frame(maxWidth: 85, maxHeight: .infinity, alignment: .top)
                     .background(Color.discordBackground)
                 
@@ -43,7 +42,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ServersRootView()
         .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
 }
 

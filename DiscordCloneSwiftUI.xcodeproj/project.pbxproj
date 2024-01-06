@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B95C6982B49335700D314DD /* HomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95C6972B49335700D314DD /* HomeRootView.swift */; };
+		7B95C69A2B49348600D314DD /* ServerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95C6992B49348600D314DD /* ServerListView.swift */; };
+		7B95C69C2B49364200D314DD /* ServerChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95C69B2B49364200D314DD /* ServerChannelView.swift */; };
 		7BD33C282B4800A9002554FD /* DiscordCloneSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD33C272B4800A9002554FD /* DiscordCloneSwiftUIApp.swift */; };
-		7BD33C2A2B4800A9002554FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD33C292B4800A9002554FD /* ContentView.swift */; };
+		7BD33C2A2B4800A9002554FD /* ServersRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD33C292B4800A9002554FD /* ServersRootView.swift */; };
 		7BD33C2C2B4800AA002554FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BD33C2B2B4800AA002554FD /* Assets.xcassets */; };
 		7BD33C2F2B4800AA002554FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BD33C2E2B4800AA002554FD /* Preview Assets.xcassets */; };
 		7BD33C392B4800AB002554FD /* DiscordCloneSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD33C382B4800AB002554FD /* DiscordCloneSwiftUITests.swift */; };
@@ -34,9 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B95C6972B49335700D314DD /* HomeRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRootView.swift; sourceTree = "<group>"; };
+		7B95C6992B49348600D314DD /* ServerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListView.swift; sourceTree = "<group>"; };
+		7B95C69B2B49364200D314DD /* ServerChannelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerChannelView.swift; sourceTree = "<group>"; };
 		7BD33C242B4800A9002554FD /* DiscordCloneSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscordCloneSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BD33C272B4800A9002554FD /* DiscordCloneSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscordCloneSwiftUIApp.swift; sourceTree = "<group>"; };
-		7BD33C292B4800A9002554FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7BD33C292B4800A9002554FD /* ServersRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersRootView.swift; sourceTree = "<group>"; };
 		7BD33C2B2B4800AA002554FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BD33C2E2B4800AA002554FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7BD33C342B4800AB002554FD /* DiscordCloneSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscordCloneSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +77,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B95C6942B49323700D314DD /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				7B95C69D2B493BB200D314DD /* Servers */,
+				7B95C6952B49324900D314DD /* Home */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		7B95C6952B49324900D314DD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7B95C6972B49335700D314DD /* HomeRootView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7B95C6962B49325400D314DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7B95C6992B49348600D314DD /* ServerListView.swift */,
+				7B95C69B2B49364200D314DD /* ServerChannelView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7B95C69D2B493BB200D314DD /* Servers */ = {
+			isa = PBXGroup;
+			children = (
+				7B95C6962B49325400D314DD /* Views */,
+				7BD33C292B4800A9002554FD /* ServersRootView.swift */,
+			);
+			path = Servers;
+			sourceTree = "<group>";
+		};
 		7BD33C1B2B4800A9002554FD = {
 			isa = PBXGroup;
 			children = (
@@ -96,7 +137,6 @@
 			children = (
 				7BD33C512B488475002554FD /* Source */,
 				7BD33C272B4800A9002554FD /* DiscordCloneSwiftUIApp.swift */,
-				7BD33C292B4800A9002554FD /* ContentView.swift */,
 				7BD33C2B2B4800AA002554FD /* Assets.xcassets */,
 				7BD33C2D2B4800AA002554FD /* Preview Content */,
 			);
@@ -131,6 +171,7 @@
 		7BD33C512B488475002554FD /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7B95C6942B49323700D314DD /* Features */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -265,8 +306,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BD33C2A2B4800A9002554FD /* ContentView.swift in Sources */,
+				7BD33C2A2B4800A9002554FD /* ServersRootView.swift in Sources */,
+				7B95C69A2B49348600D314DD /* ServerListView.swift in Sources */,
 				7BD33C282B4800A9002554FD /* DiscordCloneSwiftUIApp.swift in Sources */,
+				7B95C69C2B49364200D314DD /* ServerChannelView.swift in Sources */,
+				7B95C6982B49335700D314DD /* HomeRootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

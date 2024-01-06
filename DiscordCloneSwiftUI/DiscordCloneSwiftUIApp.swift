@@ -11,7 +11,8 @@ import SwiftUI
 struct DiscordCloneSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeRootView()
+                .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
         }
     }
 }
