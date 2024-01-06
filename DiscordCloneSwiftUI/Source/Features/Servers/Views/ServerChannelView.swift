@@ -22,7 +22,7 @@ struct ServerChannelView: View {
     @State var selectedChannel: Channel?
     
     var body: some View {
-        VStack {
+        VStack(spacing: 1) {
             HStack {
                 Text("Channel name")
                     .font(.title2)
@@ -30,8 +30,16 @@ struct ServerChannelView: View {
                 Spacer()
                 Image(systemName: "ellipsis")
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
+            .background(Color.init(uiColor: .systemGray4))
+            .clipShape(
+                .rect(
+                    topLeadingRadius: 20,
+                    bottomLeadingRadius: 0,
+                    bottomTrailingRadius: 0,
+                    topTrailingRadius: 10
+                )
+            )
             
             List(channels) { channel in
                 
@@ -54,11 +62,11 @@ struct ServerChannelView: View {
                         )
                     )
                 }
-                .listRowBackground(Color.clear)
+                .listRowBackground(Color.init(uiColor: .systemGray4))
                 
             }
             .listStyle(PlainListStyle())
-            
+            .background(Color.init(uiColor: .systemGray4))
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }

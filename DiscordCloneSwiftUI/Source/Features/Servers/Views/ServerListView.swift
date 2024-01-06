@@ -40,8 +40,7 @@ struct ServerListView: View {
             
         }
         .listStyle(PlainListStyle())
-        .frame(minWidth: 0, minHeight: 0)
-        
+        .background(Color.discordBackground)
     }
 //        .frame(maxWidth: 85, maxHeight: .infinity, alignment: .top)
 //        .background(Color.discordBackground)

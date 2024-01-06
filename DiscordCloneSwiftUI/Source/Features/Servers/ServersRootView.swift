@@ -25,34 +25,47 @@ struct ServersRootView: View {
             HStack(spacing: 0) {
                 //1st column -  Servers
                 ServerListView(servers: servers)
-                    .frame(maxWidth: 85, maxHeight: .infinity, alignment: .top)
-                    .background(Color.discordBackground)
+                    
+                    .frame(maxWidth: 85,  alignment: .top)
+                    .padding(.vertical, 1)
                 
                 // 2nd column - Channels
                 ServerChannelView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                    .background(Color.init(uiColor: .systemGray4))
-                    .padding(.trailing, 80)
+                    
+                    .padding(.trailing, 84)
+                    
             }
             
-            //3rd column - Chat view
+//            3rd column - Chat view
             ChatView(isVisibleView: $isVisibleChatView)
-                .background(Color.discordBackground)
-                .offset(x: isVisibleChatView ? 0 : UIScreen.main.bounds.width - 80)
+                .clipShape(
+                    .rect(
+                        topLeadingRadius: isVisibleChatView ? 0 : 10
+                    )
+                )
+                .offset(x: isVisibleChatView ? 0 : UIScreen.main.bounds.width - 78)
                 .overlay {
-                    Color.black
+                    Color.init(uiColor: .systemGray4)
+                        .clipShape(
+                            .rect(
+                                topLeadingRadius: 10,
+                                topTrailingRadius: 10
+                            )
+                        )
                         .opacity(isVisibleChatView ? 0 : 0.4)
-                        .offset(x: isVisibleChatView ? 0 : UIScreen.main.bounds.width - 80)
+                        .offset(x: isVisibleChatView ? 0 : UIScreen.main.bounds.width - 78)
                         .onTapGesture {
                             withAnimation {
                                 isVisibleChatView = true
                             }
                             
                         }
+                        
                 }
-            
-            
-        }
+                
+                .toolbar(isVisibleChatView ? .hidden : .visible, for: .tabBar)
+        }.background(isVisibleChatView ? Color.init(uiColor: .systemGray4) : Color.discordBackground)
         
     }
 }

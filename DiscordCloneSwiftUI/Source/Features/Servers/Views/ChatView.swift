@@ -12,18 +12,38 @@ struct ChatView: View {
 
     var body: some View {
         VStack {
-            Button {
-                withAnimation {
-                    isVisibleView.toggle()
+            HStack {
+                Button {
+                    withAnimation {
+                        isVisibleView.toggle()
+                    }
+                    
+                } label: {
+                    Image(systemName: "arrow.left")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
                 }
-                
-            } label: {
-                Text("<Back")
+                Image(systemName: "number")
+                Text("channel-name")
             }
+            .padding()
             
         }
+        
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .padding()
+        
+        .background(Color.init(uiColor: .systemGray4))
+        .padding(.top, isVisibleView ? 0 : 1)
+        .padding(.horizontal, 1)
+//        .clipShape(
+//            .rect(
+//                topLeadingRadius: 10,
+//                bottomLeadingRadius: 0,
+//                bottomTrailingRadius: 0,
+//                topTrailingRadius: 10
+//            )
+//        )
     }
 }
 
